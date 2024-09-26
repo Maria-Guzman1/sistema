@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturación | Sistema de Ventas</title>
+    <link rel="stylesheet" href="mi-tienda.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar actualizado -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">Sistema de Ventas</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro-producto.html">Registro de Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facturacion.html">Facturación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clientes.html">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="historial-facturacion.html">Historial de Facturación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inventario.html">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container mt-4">
+        <h1 class="text-center">Facturación</h1>
+        <form id="factura-form">
+            <!-- Selección de cliente -->
+            <div class="form-group">
+                <label for="cliente">Cliente:</label>
+                <select class="form-control" id="cliente" required>
+                    <option value="" disabled selected>Seleccione un cliente</option>
+                    <!-- Clientes serán cargados aquí dinámicamente -->
+                </select>
+            </div>
+
+            <!-- Tabla de productos -->
+            <div class="form-group">
+                <label for="producto">Producto:</label>
+                <select class="form-control" id="producto">
+                    <option value="" disabled selected>Seleccione un producto</option>
+                    <!-- Productos serán cargados aquí dinámicamente -->
+                </select>
+            </div>
+
+            <!-- Cantidad de producto -->
+            <div class="form-group">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" class="form-control" id="cantidad" min="1" placeholder="Ingrese la cantidad" required>
+            </div>
+
+            <!-- Botón para agregar producto a la factura -->
+            <button type="button" id="agregarProducto" class="btn btn-primary">Agregar a la Factura</button>
+        </form>
+
+        <!-- Tabla de productos agregados a la factura -->
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="facturaProductos">
+                <!-- Productos agregados aparecerán aquí -->
+            </tbody>
+        </table>
+
+        <!-- Total de la factura -->
+        <h3 class="text-right">Total: <span id="totalFactura">0.00</span> Q</h3>
+
+        <!-- Botón para finalizar la factura -->
+        <button type="button" id="finalizarFactura" class="btn btn-success btn-block">Finalizar Factura</button>
+    </div>
+
+    <script type="module" src="facturacion.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

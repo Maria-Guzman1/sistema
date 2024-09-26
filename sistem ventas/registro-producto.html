@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Productos</title>
+    <link rel="stylesheet" href="registro-producto.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar con estilo oscuro -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Sistema de Ventas</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro-productos.html">Registro de Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facturacion.html">Facturación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clientes.html">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="historial-facturacion.html">Historial de Facturación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inventario.html">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenedor del formulario -->
+    <div class="container mt-4">
+        <h2>Registrar Producto</h2>
+        <form id="producto-form">
+            <label for="id">ID del Producto:</label>
+            <input type="text" id="id" class="form-control mb-3" required>
+            
+            <label for="nombre">Nombre del Producto:</label>
+            <input type="text" id="nombre" class="form-control mb-3" required>
+            
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" class="form-control mb-3" required>
+            
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" class="form-control mb-3" required>
+            
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" class="form-control mb-3" required>
+            
+            <button type="button" id="registrar" class="btn btn-primary">Registrar Producto</button>
+        </form>
+    </div>
+
+    <!-- Tabla para mostrar los productos -->
+    <div class="container mt-4">
+        <h2>Productos Registrados</h2>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="productosTable">
+                <!-- Los productos registrados aparecerán aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script type="module" src="registro-producto.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
